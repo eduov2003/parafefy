@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carta</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <div class="container-letter">
+      <div class="cover"></div>
+      <span class="heart">♥</span>
+      <p class="paper" id="mainMessage">
+        Te hago esta cartita para recordarte que apesar de las peleas o que no nos podamos ver te sigo amando hasta el infinito, me haces muy feliz, te extraño:..
+      </p>
+      <div class="letter"></div>
+    </div>
+    <div class="options">
+      <button id="open">Abrir</button>
+      <button id="close">Cerrar</button>
+    </div>
+    <div id="link-container"></div> <!-- Contenedor para los enlaces -->
+  </main>
+  <script src="script.js"></script>
+  <script>
+    // Mensaje especial
+    const messageSpecial = encodeURIComponent("Te amo hasta el infinito"); 
+    const linkContainer = document.getElementById('link-container');
+    
+    // Enlace para abrir la carta con el mensaje especial
+    linkContainer.innerHTML += `<a href="carta.html?message=${messageSpecial}" target="_blank" class="styled-button">Abrir carta con mensaje especial</a>`;
+    
+    // Enlace para abrir la carta con otro mensaje
+    const messageNormal = encodeURIComponent("Te amo, siempre estarás en mi corazón.");
+    linkContainer.innerHTML += `<a href="carta.html?message=${messageNormal}" target="_blank" class="styled-button">Abrir carta con otro mensaje</a>`;
+  </script>
+</body>
+</html>
